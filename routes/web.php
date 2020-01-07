@@ -22,4 +22,5 @@ Route::post('/message', 'MessageController@sendMessages');
 Route::post('/new', 'MessageController@sendNewMessages');
 Route::get('/message/{id}', 'MessageController@messages');
 Route::get('/current', 'MessageController@user');
+Route::post('/profiles', 'HomeController@avatar');
 Route::get('{path}','HomeController@admin')->where( 'path', '([A-z\d\-/_.]+)?' );

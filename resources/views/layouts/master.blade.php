@@ -160,7 +160,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <!-- Sidebar user panel (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="/uploads/avatars/{{Auth::user()->avatar}}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <a href="#" class="d-block">{{Auth::user()->name}}</a>
@@ -198,11 +198,27 @@ scratch. This page gets rid of all links and provides the needed markup only.
             </ul>
           </li>
           <li class="nav-item">
+            <router-link to="/contacts" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Contacts
+              </p>
+            </router-link>
+          </li>
+          <li class="nav-item">
             <router-link to="/messages" class="nav-link">
               <i class="nav-icon fas fa-comment-alt"></i>
               <p>
                 Messages
                 <span class="right badge badge-danger">New</span>
+              </p>
+            </router-link>
+          </li>
+          <li class="nav-item">
+            <router-link to="/profile" class="nav-link">
+              <i class="nav-icon fas fa-user"></i>
+              <p>
+                Profile
               </p>
             </router-link>
           </li>

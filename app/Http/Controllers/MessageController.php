@@ -31,7 +31,7 @@ class MessageController extends Controller
 
     public function user()
     {
-        return Auth::id();
+        return Auth::user();
     }
 
     public function sendMessages(Request $request) {

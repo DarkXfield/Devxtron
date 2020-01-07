@@ -55,13 +55,13 @@
                 <div class="direct-chat-messages" id="chatWindow">
                  <div v-for="SingleMsg in SingleMsgs" :key="SingleMsg.msg_id">
                   <!-- Message. Default to the left -->
-                  <div class="direct-chat-msg" v-if="SingleMsg.user_from == userId">
+                  <div class="direct-chat-msg" v-if="SingleMsg.user_from == userData.id">
                     <div class="direct-chat-infos clearfix">
                       <span class="direct-chat-name float-left">{{SingleMsg.name}}</span>
                       <span class="direct-chat-timestamp float-right">23 Jan 2:00 pm</span>
                     </div>
                     <!-- /.direct-chat-infos -->
-                    <img class="direct-chat-img" src="" alt="Message User Image">
+                    <img class="direct-chat-img" :src="'/uploads/avatars/' + userData.avatar" alt="Message User Image">
                     <!-- /.direct-chat-img -->
                     <div class="direct-chat-text">
                       {{SingleMsg.msg}}
@@ -113,7 +113,7 @@
                 content: '',
                 privateMsgs: [],
                 SingleMsgs: [],
-                userId: '',
+                userData: [],
                 msgFrom: '',
                 conID: '',
             }
@@ -131,7 +131,7 @@
             axios.get('current')
                 .then(response => {
                     console.log(response.data);
-                    this.userId = response.data;
+                    this.userData = response.data;
                 })
                 .catch(function (error) {
                     console.log(error);

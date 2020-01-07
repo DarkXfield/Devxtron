@@ -13,7 +13,8 @@ Vue.use(VueRouter)
 let routes = [
     { path: '/dashboard', component: require('./components/Dashboard.vue').default },
     { path: '/messages', component: require('./components/Messages.vue').default },
-    { path: '/contacts', component: require('./components/Contacts.vue').default }
+    { path: '/contacts', component: require('./components/Contacts.vue').default },
+    { path: '/profile', component: require('./components/Profile.vue').default },
 ]
 
 const router = new VueRouter({
